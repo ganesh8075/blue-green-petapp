@@ -1,16 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: spring-deployment
+  name: spring-deployment-blue
 spec:
   replicas: 7
   selector:
     matchLabels:
       app: spring
+      version: blue
   template:
     metadata:
       labels:
         app: spring
+        version: blue
     spec:
       containers:
       - name: petclinic
