@@ -8,7 +8,7 @@ spec:
   type: LoadBalancer
   selector:
     app: spring 
-    version: blue
+    colour: blue
   ports:
   - name: http           # REQUIRED: referenced by ServiceMonitor
     port: 80
