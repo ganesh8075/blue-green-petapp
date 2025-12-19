@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-service
+  labels:
+    app: spring          # REQUIRED: matched by ServiceMonitor
+spec:
+  type: LoadBalancer
+  selector:
+    app: spring          # MUST match Pod labels
+  ports:
+  - name: http           # REQUIRED: referenced by ServiceMonitor
+    port: 80
+    targetPort: 8080
