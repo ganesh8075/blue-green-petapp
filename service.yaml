@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: spring-service
   labels:
-    app: spring          # REQUIRED: matched by ServiceMonitor
+    app: spring          
 spec:
   type: LoadBalancer
   selector:
-    app: spring          # MUST match Pod labels
+    app: spring 
+    version: blue
   ports:
   - name: http           # REQUIRED: referenced by ServiceMonitor
     port: 80
